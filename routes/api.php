@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;  
-use App\Http\Controllers\QRController;              
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QRController;
+             
 
-Route::post('/qr', [QRController::class, 'processQR']);
+Route::post('/qr/scan', [QRController::class, 'scan']);
 // Route::get('/', function () {
 //     return view('welcome');
 // });
