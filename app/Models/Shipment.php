@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shipment extends Model
 {
+    protected $table = 'shipment';
+
+    public function inventory()
+    {
+        return $this->belongsTo(Inventory::class);
+    }
+
     public function tracker()
     {
         return $this->belongsTo(Tracker::class);
@@ -19,15 +26,5 @@ class Shipment extends Model
     public function alerts()
     {
         return $this->hasMany(Alert::class);
-    }
-
-    public function weatherRisks()
-    {
-        return $this->hasMany(WeatherRisk::class, 'linked_to_shipment_id');
-    }
-
-    public function port()
-    {
-        return $this->belongsTo(Port::class, 'destination', 'name');
     }
 }
