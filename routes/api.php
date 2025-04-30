@@ -10,7 +10,6 @@ use App\Http\Controllers\TimelineEntryController;
 use App\Http\Controllers\AlertController;
 use App\Http\Controllers\PortController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\QRController;
 
 // === Shipments ===
 Route::get('/shipments', [ShipmentController::class, 'index']); // List all

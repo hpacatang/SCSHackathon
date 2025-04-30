@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminDashboardController;
 
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index']);
 Route::get('/', function () {
     return view('welcome');
 });
-Route::post('/qr-scan', [QRController::class, 'processScan']);
